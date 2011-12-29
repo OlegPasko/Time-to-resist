@@ -13,17 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20111227223122) do
 
-  create_table "exercises", :force => true do |t|
-    t.string   "title"
-    t.string   "discription"
-    t.string   "rightvideo"
-    t.string   "righttext"
-    t.string   "wrongvideo"
-    t.string   "wrongtext"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

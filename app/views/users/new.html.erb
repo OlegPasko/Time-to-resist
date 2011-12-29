@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1>Регистрация</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -12,20 +12,22 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :Реальное_имя %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= f.label :Игровой_ник %><br />
     <%= f.text_field :email %>
   </p>
+  <p>*соблюдаем регистр букв (большие и маленькие)</p>
   <p>
-    <%= f.label :password %><br />
+    <%= f.label :Пароль %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Подтверждение_пароля %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <p class="button"><%= f.submit %></p>
+  <p>*не стоит указывать пороль игры</p>
+  <p class="button"><%= f.submit "Зарегиццо" %></p>
 <% end %>

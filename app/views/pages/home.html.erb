@@ -1,2 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Нас уже <%=@users.count%> человек!</h1>
+<%@users.each do |u|%>
+<%=u.email%> (<%=u.name%>)<br />
+<%end%>
