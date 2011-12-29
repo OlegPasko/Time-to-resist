@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CitiesController < ApplicationController
   # GET /cities
   # GET /cities.json
