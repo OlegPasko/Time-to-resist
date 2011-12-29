@@ -12,7 +12,7 @@
 <div class="span-12 last">
 <h3>Достижения и награды:</h3>
 <p>
-	<%if @user.craft > 99 %><%=image_tag @user.profession.image, :title => "#{@user.profession.name} неплохой, навык выше ста!" %><%end%>
+	<%if @user.craft && @user.craft > 99 %><%=image_tag @user.profession.image, :title => "#{@user.profession.name} неплохой, навык выше ста!" %><%end%>
 	<%if @user.zr == true %><%=image_tag "/assets/gold_set.png", :title => "Обладатель золотого ружья!" %><%end%>
 </p>
 </div>
