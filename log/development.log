@@ -1,627 +1,647 @@
 
 
-Started GET "/" for 127.0.0.1 at 2011-12-29 16:04:24 +0200
-Processing by PagesController#home as HTML
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
-  Rendered pages/home.html.erb within layouts/application (46.9ms)
-  [1m[35mUser Load (57.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
-Completed 200 OK in 652ms (Views: 218.7ms | ActiveRecord: 85.9ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:13:33 +0200
+Processing by UsersController#new as HTML
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered users/new.html.erb within layouts/application (208.0ms)
+Completed 500 Internal Server Error in 346ms
+
+ActionView::Template::Error (wrong number of arguments (4 for 2)):
+    62: 	  <td>
+    63: 	  <p>
+    64: 	    <%= f.label :�������������� %><br />
+    65: 	    <%= f.number_field :city_id, City.all, :id, :name %>
+    66: 	  </p>
+    67: 	  </td>
+    68: 	  <td>
+  app/views/users/new.html.erb:65:in `block in _app_views_users_new_html_erb___92342823_29027304'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___92342823_29027304'
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /scaffolds.css - 304 Not Modified (2ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.5ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.3ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /pages.css - 304 Not Modified (4ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (1.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (1.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 2.9ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /sessions.css - 304 Not Modified (1ms)
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /application.css - 304 Not Modified (22ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /application.css - 304 Not Modified (8ms)
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /cities.css - 304 Not Modified (2ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /jquery.js - 304 Not Modified (5ms)
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /pages.css - 304 Not Modified (2ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /screen.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
 Served asset /users.css - 304 Not Modified (1ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /jquery.js - 304 Not Modified (18ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /application.js - 304 Not Modified (7ms)
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /cities.js - 304 Not Modified (1ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
-Served asset /users.js - 304 Not Modified (1ms)
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /pages.js - 304 Not Modified (1ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:28 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
 Served asset /sessions.js - 304 Not Modified (1ms)
 
 
-Started GET "/" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
-Processing by PagesController#home as HTML
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
-  Rendered pages/home.html.erb within layouts/application (2.0ms)
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
-Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /users.js - 304 Not Modified (2ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:23 +0200
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
-Served asset /users.css - 304 Not Modified (0ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:56 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:57 +0200
 Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:57 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:57 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:04:52 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:14:57 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:04:53 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
-Completed 500 Internal Server Error in 87ms
-
-ActionView::MissingTemplate (Missing template users/show, application/show with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
-  * "C:/Sites/timetoresist/app/views"
-):
-  actionpack (3.2.0.rc1) lib/action_view/path_set.rb:58:in `find'
-  actionpack (3.2.0.rc1) lib/action_view/lookup_context.rb:109:in `find'
-  c:in `find_template'
-  actionpack (3.2.0.rc1) lib/action_view/renderer/template_renderer.rb:28:in `determine_template'
-  actionpack (3.2.0.rc1) lib/action_view/renderer/template_renderer.rb:10:in `render'
-  actionpack (3.2.0.rc1) lib/action_view/renderer/renderer.rb:36:in `render_template'
-  actionpack (3.2.0.rc1) lib/action_view/renderer/renderer.rb:17:in `render'
-  actionpack (3.2.0.rc1) lib/abstract_controller/rendering.rb:115:in `_render_template'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
-  actionpack (3.2.0.rc1) lib/abstract_controller/rendering.rb:109:in `render_to_body'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
-  actionpack (3.2.0.rc1) lib/abstract_controller/rendering.rb:94:in `render'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/rendering.rb:16:in `render'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
-  activesupport (3.2.0.rc1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
-  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
-  activesupport (3.2.0.rc1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
-  activerecord (3.2.0.rc1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:39:in `render'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
-  actionpack (3.2.0.rc1) lib/abstract_controller/base.rb:167:in `process_action'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/rendering.rb:10:in `process_action'
-  actionpack (3.2.0.rc1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:421:in `_run__242645977__process_action__796017367__callbacks'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:412:in `__run_keyed_callback'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:389:in `_run_process_action_callbacks'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (3.2.0.rc1) lib/abstract_controller/callbacks.rb:17:in `process_action'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/rescue.rb:29:in `process_action'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
-  activesupport (3.2.0.rc1) lib/active_support/notifications.rb:119:in `block in instrument'
-  activesupport (3.2.0.rc1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
-  activesupport (3.2.0.rc1) lib/active_support/notifications.rb:119:in `instrument'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
-  activerecord (3.2.0.rc1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
-  actionpack (3.2.0.rc1) lib/abstract_controller/base.rb:121:in `process'
-  actionpack (3.2.0.rc1) lib/abstract_controller/rendering.rb:45:in `process'
-  actionpack (3.2.0.rc1) lib/action_controller/metal.rb:199:in `dispatch'
-  actionpack (3.2.0.rc1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
-  actionpack (3.2.0.rc1) lib/action_controller/metal.rb:242:in `block in action'
-  actionpack (3.2.0.rc1) lib/action_dispatch/routing/route_set.rb:66:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/routing/route_set.rb:66:in `dispatch'
-  actionpack (3.2.0.rc1) lib/action_dispatch/routing/route_set.rb:30:in `call'
-  journey (1.0.0.rc3) lib/journey/router.rb:60:in `block in call'
-  journey (1.0.0.rc3) lib/journey/router.rb:48:in `each'
-  journey (1.0.0.rc3) lib/journey/router.rb:48:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/routing/route_set.rb:570:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-  rack (1.3.5) lib/rack/etag.rb:23:in `call'
-  rack (1.3.5) lib/rack/conditionalget.rb:25:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/head.rb:14:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/flash.rb:242:in `call'
-  rack (1.3.5) lib/rack/session/abstract/id.rb:195:in `context'
-  rack (1.3.5) lib/rack/session/abstract/id.rb:190:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/cookies.rb:338:in `call'
-  activerecord (3.2.0.rc1) lib/active_record/query_cache.rb:64:in `call'
-  activerecord (3.2.0.rc1) lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:395:in `_run_call_callbacks'
-  activesupport (3.2.0.rc1) lib/active_support/callbacks.rb:81:in `run_callbacks'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/reloader.rb:63:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-  railties (3.2.0.rc1) lib/rails/rack/logger.rb:26:in `call_app'
-  railties (3.2.0.rc1) lib/rails/rack/logger.rb:16:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
-  rack (1.3.5) lib/rack/methodoverride.rb:24:in `call'
-  rack (1.3.5) lib/rack/runtime.rb:17:in `call'
-  activesupport (3.2.0.rc1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-  rack (1.3.5) lib/rack/lock.rb:15:in `call'
-  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/static.rb:53:in `call'
-  railties (3.2.0.rc1) lib/rails/engine.rb:479:in `call'
-  rack (1.3.5) lib/rack/content_length.rb:14:in `call'
-  railties (3.2.0.rc1) lib/rails/rack/log_tailer.rb:14:in `call'
-  rack (1.3.5) lib/rack/handler/webrick.rb:59:in `service'
-  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 1.0ms)
 
 
-  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (5.9ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /users.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:03 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:16:18 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (2.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 34ms (Views: 34.2ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
-Served asset /users.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:12 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:17:55 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (0.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 1.0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
-Served asset /users.css - 304 Not Modified (0ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:06:34 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:18:17 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (1.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /users.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /sessions.js - 304 Not Modified (4ms)
-
-
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /users.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:15 +0200
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (0.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /users.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:07:53 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:19:32 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (0.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (1.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (1.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 2.9ms)
 
 
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Served asset /users.css - 304 Not Modified (0ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Served asset /users.js - 304 Not Modified (3ms)
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:04 +0200
-Served asset /application.js - 304 Not Modified (0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Processing by PagesController#home as HTML
-  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
-  Rendered pages/home.html.erb within layouts/application (1.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /users.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:08:05 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:06 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 16:14:07 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  Rendered users/show.html.erb within layouts/application (0.0ms)
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 1.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 22ms (Views: 22.5ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
-Served asset /scaffolds.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /users.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 16:14:08 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:22 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (1.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:25 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2011-12-29 18:20:26 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 18:20:27 +0200
 Served asset /application.js - 304 Not Modified (0ms)

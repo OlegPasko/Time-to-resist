@@ -1,5 +1,7 @@
 Muschool::Application.routes.draw do
 
+  resources :cities
+
   resources :exercises
 
   get "log_out" => "sessions#destroy", :as => "log_out"

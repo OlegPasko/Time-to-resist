@@ -12,12 +12,8 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :Реальное_имя %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
     <%= f.label :Игровой_ник %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => "title" %>
   </p>
   <p>*соблюдаем регистр букв (большие и маленькие)</p>
   <p>
@@ -29,5 +25,68 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>*не стоит указывать пороль игры</p>
-  <p class="button"><%= f.submit "Зарегиццо" %></p>
+  <p>
+    <%= f.label :Реальное_имя %><br />
+    <%= f.text_field :name %>
+  </p>
+  <table>
+  	<tr>  		
+	  <td>
+	  <p>
+	    <%= f.label :Город %><br />
+	    <%= f.collection_select :city_id, City.all, :id, :name, {:include_blank => true} %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Тип_персонажа %><br />
+	    <%= f.collection_select :character_id, Character.all, :id, :name, {:include_blank => true} %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Профессия %><br />
+	    <%= f.collection_select :profession_id, Profession.all, :id, :name, {:include_blank => true} %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Призвание %><br />
+	    <%= f.collection_select :mission_id, Mission.all, :id, :name, {:include_blank => true} %>
+	  </p>
+	  </td>
+	</tr>
+
+  	<tr>  		
+	  <td>
+	  <p>
+	    <%= f.label :Уровень %><br />
+	    <%= f.number_field :level %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Максимально_HP %><br />
+	    <%= f.number_field :maxhealth %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Уровень_профессии %><br />
+	    <%= f.number_field :craft %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Есть_ли_ружжо_золотое? %><br />
+	    <%= f.check_box :zr %>
+	  </p>
+	  </td>
+	</tr>
+  </table>
+    <p>
+    <%= f.label :Немного_о_себе %><br />
+    <%= f.text_area :about, :size => "20x20" %>
+  </p>
+  <p><%= f.submit "Зарегиццо" %></p>
 <% end %>
