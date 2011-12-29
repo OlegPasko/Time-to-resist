@@ -7,7 +7,7 @@
 <p>Максимум HP: <b><%= @user.maxhealth %></b></p>
 
 <p>О себе: <b><%= @user.mission.name %>. <%= @user.about %></b></p>
-<p><%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%end%></p>
+<p><%if current_user %><%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%end%><%end%></p>
 </div>
 <div class="span-12 last">
 <h3>Достижения и награды:</h3>
