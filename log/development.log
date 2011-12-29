@@ -1,0 +1,58 @@
+
+
+Started GET "/log_in" for 127.0.0.1 at 2011-12-29 00:09:09 +0200
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 229ms (Views: 228.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/exercises.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /exercises.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /pages.js - 200 OK (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /sessions.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /application.js - 200 OK (8ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/exercises.js?body=1" for 127.0.0.1 at 2011-12-29 00:09:12 +0200
+Served asset /exercises.js - 304 Not Modified (24ms)
