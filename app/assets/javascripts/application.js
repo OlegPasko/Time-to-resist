@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function() {
+    $('#users').dataTable( {
+        "sPaginationType": "full_numbers",
+        "aaSorting": [[ 0, "desc" ]]
+    } );
+} );
