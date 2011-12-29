@@ -1,297 +1,1106 @@
 
 
-Started GET "/" for 127.0.0.1 at 2011-12-29 20:16:11 +0200
-Processing by PagesController#home as HTML
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
-  Rendered pages/home.html.erb within layouts/application (58.6ms)
-  [1m[35mUser Load (57.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
-Completed 200 OK in 676ms (Views: 242.2ms | ActiveRecord: 85.9ms)
+Started GET "/cities" for 127.0.0.1 at 2011-12-29 20:33:56 +0200
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  Rendered cities/index.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 282ms (Views: 279.3ms | ActiveRecord: 1.0ms)
 
 
-Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /screen.css - 304 Not Modified (11ms)
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:00 +0200
+Served asset /screen.css - 304 Not Modified (2ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /sessions.css - 304 Not Modified (1ms)
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:00 +0200
+Served asset /cities.css - 304 Not Modified (5ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /pages.css - 304 Not Modified (2ms)
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:00 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /users.css - 304 Not Modified (1ms)
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
 
 
-Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /cities.css - 304 Not Modified (1ms)
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /cities.js - 304 Not Modified (1ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /application.css - 304 Not Modified (6ms)
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /users.css - 304 Not Modified (2ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /jquery.js - 304 Not Modified (3ms)
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /application.css - 304 Not Modified (7ms)
 
 
-Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /cities.js - 304 Not Modified (2ms)
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /pages.css - 304 Not Modified (1ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /jquery_ujs.js - 304 Not Modified (19ms)
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /sessions.css - 304 Not Modified (3ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /pages.js - 304 Not Modified (2ms)
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /pages.js - 304 Not Modified (18ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
-Served asset /sessions.js - 304 Not Modified (10ms)
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
 Served asset /users.js - 304 Not Modified (2ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:15 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:34:01 +0200
 Served asset /application.js - 304 Not Modified (11ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 20:16:20 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
-  [1m[35mCharacter Load (1.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
-  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
-  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" WHERE "professions"."id" = 2 LIMIT 1
-  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" WHERE "missions"."id" = 1 LIMIT 1[0m
-  Rendered users/show.html.erb within layouts/application (629.9ms)
-Completed 500 Internal Server Error in 638ms
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:36:26 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 3ms
 
-ActionView::Template::Error (undefined method `current_user?' for #<#<Class:0x3f22c98>:0x3f1fff8>):
-    7: <p>���������������� HP: <b><%= @user.maxhealth %></b></p>
-    8: 
-    9: <p>�� ��������: <b><%= @user.mission.name %>. <%= @user.about %></b></p>
-    10: <p><%if current_user? %><%if @user.id == current_user.id%><%=link_to "�������������������������� �������������������� �� ��������", edit_user_path(@user)%><%end%><%end%></p>
-    11: </div>
-    12: <div class="span-12 last">
-    13: <h3>�������������������� �� ��������������:</h3>
-  app/views/users/show.html.erb:10:in `_app_views_users_show_html_erb__969907335_33093744'
+NameError (uninitialized constant CitiesController::Users):
+  app/controllers/cities_controller.rb:18:in `show'
 
 
-  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
-  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (93.8ms)
-  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (102.5ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
-  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
-  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
-  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" WHERE "professions"."id" = 2 LIMIT 1[0m
-  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" WHERE "missions"."id" = 1 LIMIT 1
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-  Rendered users/show.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.0ms)
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  Rendered cities/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 153ms (Views: 24.4ms | ActiveRecord: 1.0ms)
 
 
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /screen.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /users.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
 Served asset /cities.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
 Served asset /cities.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /users.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/recipe_quack.png" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /recipe_quack.png - 304 Not Modified (2ms)
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/gold_set.png" for 127.0.0.1 at 2011-12-29 20:16:30 +0200
-Served asset /gold_set.png - 304 Not Modified (1ms)
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/log_out" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
-Processing by SessionsController#destroy as HTML
-Redirected to http://localhost:3000/
-Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:36:40 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:39:53 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  Rendered cities/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:53 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:53 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:39:54 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered cities/show.html.erb within layouts/application (201.2ms)
+Completed 200 OK in 211ms (Views: 210.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:41:27 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (1ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."city_id" = 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  Rendered cities/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:32 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:41:33 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered cities/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:50:11 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."city_id" = 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  Rendered cities/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:50:18 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered cities/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:24 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:25 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:25 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:50:25 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Processing by PagesController#home as HTML
   [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
   Rendered pages/home.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /users.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
-Served asset /screen.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
-Served asset /pages.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /cities.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /cities.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /users.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:37 +0200
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:28 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/users/2" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:47 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:58 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:50:59 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:58 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:52:59 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:53:33 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered cities/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:36 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:53:37 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
 Processing by UsersController#show as HTML
   Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "2"]]
-  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
-  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
-  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" WHERE "professions"."id" = 2 LIMIT 1
-  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" WHERE "missions"."id" = 1 LIMIT 1[0m
-  Rendered users/show.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" WHERE "professions"."id" = 2 LIMIT 1[0m
+  [1m[35mMission Load (1.0ms)[0m  SELECT "missions".* FROM "missions" WHERE "missions"."id" = 1 LIMIT 1
+  Rendered users/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:40 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:41 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:41 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/recipe_quack.png" for 127.0.0.1 at 2011-12-29 20:53:41 +0200
+Served asset /recipe_quack.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/gold_set.png" for 127.0.0.1 at 2011-12-29 20:53:41 +0200
+Served asset /gold_set.png - 304 Not Modified (1ms)
+
+
+Started GET "/cities/1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."city_id" = 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  Rendered cities/show.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /application.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /cities.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
 Served asset /screen.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /users.css - 304 Not Modified (0ms)
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /application.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /cities.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
 Served asset /pages.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /pages.js - 304 Not Modified (0ms)
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /users.js - 304 Not Modified (0ms)
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /sessions.js - 304 Not Modified (0ms)
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /users.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/gold_set.png" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /gold_set.png - 304 Not Modified (0ms)
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/recipe_quack.png" for 127.0.0.1 at 2011-12-29 20:16:39 +0200
-Served asset /recipe_quack.png - 304 Not Modified (0ms)
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /sessions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:53:44 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /screen.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /cities.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/cities.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /cities.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2011-12-29 20:53:51 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)

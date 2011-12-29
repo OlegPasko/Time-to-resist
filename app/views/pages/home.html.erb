@@ -1,4 +1,4 @@
 <h1>Нас уже <%=@users.count%> человек!</h1>
 <%@users.each do |u|%>
-<%= link_to u.email, u%> (<%=u.name%>)<br />
+<%=image_tag u.character.image%> <%= link_to u.email, u%> (<%=u.level%>) из г. <%= link_to u.city.name, u.city%> <br />
 <%end%>

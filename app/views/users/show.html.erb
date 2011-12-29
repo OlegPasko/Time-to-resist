@@ -6,7 +6,7 @@
 <p>Профессия: <b><%= @user.profession.name %> (<%= @user.craft %>)</b></p>
 <p>Максимум HP: <b><%= @user.maxhealth %></b></p>
 
-<p>О себе: <b><%= @user.mission.name %>. <%= @user.about %></b></p>
+<p>О себе: <b><%= @user.mission.name %>. <br /><%= @user.about %></b></p>
 <p><%if current_user %><%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%end%><%end%></p>
 </div>
 <div class="span-12 last">

@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
+  
+  <h2>г. <%= @city.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @city.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
+<table>
+<%@users.each do |u|%>
+<tr>
+<td><%=image_tag u.character.image%> <%=link_to u.email, u%> (<%=u.level%>)</td>
+</tr>
+<%end%>
+</table>
