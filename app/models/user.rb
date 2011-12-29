@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates_presence_of :character_id
   validates_presence_of :profession_id
   validates_presence_of :city_id
+  validates_presence_of :level
+  validates_presence_of :maxhealth
+  validates_presence_of :craft
   validates_uniqueness_of :email
   
   

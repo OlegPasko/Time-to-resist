@@ -2,12 +2,17 @@
 
 <table id="users">
 	<thead>
-		<th>Lvl.</th><th>Ник</th><th>Город</th>
+		<th>Lvl.</th><th>Ник</th><th>HP</th><th>Город</th><th>Профа</th><th>Навык</th>
 	</thead>
 	<tbody>
 		<%@users.each do |u|%>
 		<tr>
-			<td><%=u.level%></td><td><%=image_tag u.character.image%> <%= link_to u.email, u%></td><td><%= link_to u.city.name, u.city%></td>
+			<td><%=u.level%></td>
+			<td><%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%></td>
+			<td><%=u.maxhealth%></td>
+			<td><%= link_to u.city.name, u.city%></td>
+			<td><%=u.profession.name%></td>
+			<td><%=u.craft%></td>
 		</tr>
 		<%end%>
 	</tbody>
