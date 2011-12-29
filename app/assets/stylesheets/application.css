@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
 */
+.avatar {
+	max-width:230px;
+	max-height:460px;
+	height:auto;
+}

@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   validates_presence_of :craft
   validates_uniqueness_of :email
   
-  mount_uploader :avatar, AvatarUploader
-  
   has_one    :mission
   has_one    :character
   has_one    :profession
