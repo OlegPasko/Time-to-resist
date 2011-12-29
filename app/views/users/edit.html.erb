@@ -84,7 +84,16 @@
 	  </td>
 	</tr>
   </table>
-    <p>
+  
+  <p>
+    <%= f.file_field :avatar %>
+  </p>
+  <p>
+    <%= f.label :remote_avatar_url, "или ссылка на фотку, сами подгрузим :)" %><br />
+    <%= f.text_field :remote_avatar_url %>
+  </p>
+  
+  <p>
     <%= f.label :Немного_о_себе %><br />
     <%= f.text_area :about, :size => "20x20" %>
   </p>

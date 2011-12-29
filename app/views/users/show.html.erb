@@ -1,5 +1,10 @@
 <h2><%= @user.character.name %> <%=@user.email%></h2>
-<div class="span-12 border">
+
+<div class="span-6 border">
+<%= image_tag @user.avatar if @user.avatar? %>
+</div>
+
+<div class="span-8 border">
 <p><b>г. <%=@user.city.name%></b></p>
 <p>Имя: <b><%= @user.name %></b></p>
 <p>Уровень: <b><%= @user.level %></b></p>
@@ -9,7 +14,8 @@
 <p>О себе: <b><%= @user.mission.name %>. <br /><%= @user.about %></b></p>
 <p><%if current_user %><%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%end%><%end%></p>
 </div>
-<div class="span-12 last">
+
+<div class="span-10 last">
 <h3>Достижения и награды:</h3>
 <p>
 	<%if @user.craft && @user.craft > 99 %><%=image_tag @user.profession.image, :title => "#{@user.profession.name} неплохой, навык выше ста!" %><%end%>

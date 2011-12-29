@@ -11,62 +11,63 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229160716) do
+ActiveRecord::Schema.define(:version => 20111229231603) do
 
   create_table "characters", :force => true do |t|
-    t.string   "name"
-    t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "image"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "cities", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "exercises", :force => true do |t|
-    t.string   "title"
-    t.string   "discription"
-    t.string   "rightvideo"
-    t.string   "righttext"
-    t.string   "wrongvideo"
-    t.string   "wrongtext"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string    "title"
+    t.string    "discription"
+    t.string    "rightvideo"
+    t.string    "righttext"
+    t.string    "wrongvideo"
+    t.string    "wrongtext"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
   end
 
   create_table "missions", :force => true do |t|
-    t.string   "name"
-    t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "image"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "professions", :force => true do |t|
-    t.string   "name"
-    t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "image"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.integer  "character_id"
-    t.integer  "profession_id"
-    t.integer  "level"
-    t.string   "city"
-    t.integer  "maxhealth"
-    t.integer  "mission_id"
-    t.boolean  "zr"
-    t.integer  "craft"
-    t.integer  "city_id"
-    t.string   "about"
+    t.string    "name"
+    t.string    "email"
+    t.string    "password_digest"
+    t.timestamp "created_at",      :null => false
+    t.timestamp "updated_at",      :null => false
+    t.integer   "character_id"
+    t.integer   "profession_id"
+    t.integer   "level"
+    t.string    "city"
+    t.integer   "maxhealth"
+    t.integer   "mission_id"
+    t.boolean   "zr"
+    t.integer   "craft"
+    t.integer   "city_id"
+    t.string    "about"
+    t.string    "avatar"
   end
 
 end
