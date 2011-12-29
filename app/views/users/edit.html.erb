@@ -1,4 +1,4 @@
-<h1>Регистрация</h1>
+<h1>Редактирование информации</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -88,5 +88,5 @@
     <%= f.label :Немного_о_себе %><br />
     <%= f.text_area :about, :size => "20x20" %>
   </p>
-  <p><%= f.submit "Зарегиццо" %></p>
+  <p><%= f.submit "Обновить" %></p>
 <% end %>
