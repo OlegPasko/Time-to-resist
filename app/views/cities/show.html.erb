@@ -2,10 +2,6 @@
   
   <h2>г. <%= @city.name %></h2>
 
-<table>
 <%@users.each do |u|%>
-<tr>
-<td><%=image_tag u.character.image%> <%=link_to u.email, u%> (<%=u.level%>)</td>
-</tr>
+<%=image_tag u.character.image%> <%=link_to u.email, u%> (<%=u.level%>)<br />
 <%end%>
-</table>
