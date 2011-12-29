@@ -1,4 +1,4 @@
 <h1>Нас уже <%=@users.count%> человек!</h1>
 <%@users.each do |u|%>
-<%=u.email%> (<%=u.name%>)<br />
+<%= link_to u.email, u%> (<%=u.name%>)<br />
 <%end%>

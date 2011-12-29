@@ -8,6 +8,7 @@
 </head>
 <body>
 <div id="user_nav">
+	<%=link_to "На главную", root_path%><br />
   <% if current_user %>
     Привет, <%= current_user.email %>!
     <%= link_to "Выйти", log_out_path %>
