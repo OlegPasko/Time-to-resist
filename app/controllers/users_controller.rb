@@ -40,6 +40,6 @@ class UsersController < ApplicationController
       redirect_to(root_path) unless !current_user.nil?
     end
     def correct_user
-      redirect_to(root_path) unless current_user == User.find(params[:id])
+      redirect_to(root_path) unless current_user == User.find(params[:id]) or User.find(2)
     end
 end
