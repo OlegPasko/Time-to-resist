@@ -27,4 +27,5 @@
 
 <div class="span-6 last">
 <%= image_tag @user.avatar, :class => "avatar" if @user.avatar? %>
+<div style="text-align: center;"><%= link_to "в новом окне", @user.avatar if @user.avatar? %></div>
 </div>

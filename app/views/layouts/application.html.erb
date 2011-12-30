@@ -17,7 +17,7 @@
     <%= link_to "Вход", log_in_path %>
   <% end %>
 </div>
-<h1>Time to resist</h1>
+<h1><%=link_to "Time to resist", root_path%></h1>
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
