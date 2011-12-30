@@ -1,19 +1,22 @@
-<h1>Time to resist</h1>
-<h2>Нас уже <%=@users.count%> человек!</h2>
-<table id="users">
-	<thead>
-		<th>Lvl.</th><th>Ник</th><th>HP</th><th>Город</th><th>Профа</th><th>Навык</th>
-	</thead>
-	<tbody>
-		<%@users.each do |u|%>
-		<tr>
-			<td><%=u.level%></td>
-			<td><%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%></td>
-			<td><%=u.maxhealth%></td>
-			<td><%= link_to u.city.name, u.city%></td>
-			<td><%=u.profession.name%></td>
-			<td><%=u.craft%></td>
-		</tr>
+<div class="span-8 border">
+
+<h3>Последние 14 из <%=@users.count%> человек</h3>
+		<%@lastusers.each do |u|%>
+			<%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%> (<%=u.level%>) из г. <%= link_to u.city.name, u.city%><br />
 		<%end%>
-	</tbody>
-</table>
+<br />
+<div style="text-align: right;"><b><%= link_to "Посмотреть всех >>", users_path%></b></div>
+</div>
+<div class="span-10 border">
+	<h3>Последние награждения</h3>
+	<%@lastrewards.each do |r|%>
+		<%=r.created_at.strftime('%d.%m.%Y ')%> Награда <%=link_to r.prize.title, r.prize, :title => r.prize.description%> вручена <%= image_tag r.user.character.image, :title => r.user.character.name %> <%=link_to r.user.email, r.user%>.<br />
+		<i><%=link_to r.text, r%></i><br />
+	<%end%>
+	
+	<div style="text-align: right;"><b><%= link_to "Все награды >>", prizes_path%></b></div>
+</div>
+<div class="span-6 last">
+	<h3>Угадай кто :)</h3>
+	<p>Альянс в лицах, — тут будет случайная аватарка.</p>
+</div>

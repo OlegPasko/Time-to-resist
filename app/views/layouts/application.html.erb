@@ -11,14 +11,13 @@
 <div id="user_nav">
 	<%=link_to "На главную", root_path%> | 
   <% if current_user %>
-    Привет, <%= link_to current_user.email, current_user %>!
-    <%= link_to "Выйти", log_out_path %>
+    Привет, <%= link_to current_user.email, current_user %> <%= link_to "(выйти)", log_out_path %>!
   <% else %>
     <%= link_to "Регистрация", sign_up_path %> |
     <%= link_to "Вход", log_in_path %>
   <% end %>
 </div>
-
+<h1>Time to resist</h1>
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>

@@ -14,7 +14,11 @@
 </div>
 
 <div class="span-10 border">
-<h3>Достижения и награды:</h3>
+<h3>Награды:</h3>
+<% @user.rewards.each do |r|%>
+<%= link_to image_tag(r.prize.image, :title => r.prize.title), r %>
+<% end %>
+<h3>Достижения:</h3>
 <p>
 	<%if @user.craft && @user.craft > 99 %><%=image_tag @user.profession.image, :title => "#{@user.profession.name} неплохой, навык выше ста!" %><%end%>
 	<%if @user.zr == true %><%=image_tag "/assets/gold_set.png", :title => "Обладатель золотого ружья!" %><%end%>

@@ -12,12 +12,15 @@
   <tr>
     <td><%= city.name %></td>
     <td><%= link_to 'Show', city %></td>
+    <% if current_user && admin_user %>
     <td><%= link_to 'Edit', edit_city_path(city) %></td>
     <td><%= link_to 'Destroy', city, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if current_user && admin_user %>
 <%= link_to 'New City', new_city_path %>
+<% end %>

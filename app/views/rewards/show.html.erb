@@ -1,20 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h2>Наградной сертификат</h2>
 
+<div class="span-4 border">
+	<div style="text-align: center;"><b><%= link_to @reward.prize.title, @reward.prize %></b></div>
+	<div style="text-align: center;"><%= link_to image_tag(@reward.prize.image), @reward.prize %></div>
+
+</div>
+<div class="span-20 last">
 <p>
-  <b>User:</b>
-  <%= @reward.user_id %>
+  <b>Награжден:</b>
+  <%= link_to @reward.user.email, @reward.user %>
 </p>
 
 <p>
-  <b>Prize:</b>
-  <%= @reward.prize_id %>
-</p>
-
-<p>
-  <b>Text:</b>
+  <b>Основание:</b>
   <%= @reward.text %>
 </p>
 
-
+<p>
+  <b>Получена:</b>
+  <%= @reward.created_at.strftime('%d.%m.%Y ') %>
+</p>
+<% if current_user && admin_user %>
 <%= link_to 'Edit', edit_reward_path(@reward) %> |
 <%= link_to 'Back', rewards_path %>
+<% end %>
+</div>

@@ -1,0 +1,23 @@
+<h1>Все участники "под фильтром"</h1>
+
+<table id="users">
+	<thead>
+		<th>Lvl.</th><th>Ник</th><th>HP</th><th>Город</th><th>Профа</th><th>Навык</th><th>Тип</th><% if current_user && admin_user %><th>ID</th><%end%>
+	</thead>
+	<tbody>
+		<%@users.each do |u|%>
+		<tr>
+			<td><%=u.level%></td>
+			<td><%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%></td>
+			<td><%=u.maxhealth%></td>
+			<td><%= link_to u.city.name, u.city%></td>
+			<td><%=u.profession.name%></td>
+			<td><%=u.craft%></td>
+			<td><%=u.character.name%></td>
+			<% if current_user && admin_user %>
+			<td><%=u.id%></td>
+			<%end%>
+		</tr>
+		<%end%>
+	</tbody>
+</table>

@@ -1,3 +1,4 @@
+<% if current_user && admin_user %>
 <%= form_for(@reward) do |f| %>
   <% if @reward.errors.any? %>
     <div id="error_explanation">
@@ -13,17 +14,18 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :email %>
   </div>
   <div class="field">
     <%= f.label :prize_id %><br />
-    <%= f.number_field :prize_id %>
+    <%= f.collection_select :prize_id, Prize.all, :id, :title %>
   </div>
   <div class="field">
     <%= f.label :text %><br />
     <%= f.text_field :text %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Наградить!"%>
   </div>
+<% end %>
 <% end %>

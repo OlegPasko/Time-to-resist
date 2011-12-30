@@ -1,27 +1,22 @@
-<h1>Listing prizes</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2>Награды альянса</h2>
 
 <% @prizes.each do |prize| %>
-  <tr>
-    <td><%= prize.title %></td>
-    <td><%= prize.description %></td>
-    <td><%= prize.image %></td>
-    <td><%= link_to 'Show', prize %></td>
-    <td><%= link_to 'Edit', edit_prize_path(prize) %></td>
-    <td><%= link_to 'Destroy', prize, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+	<div class="span-4">
+		<div style="text-align: center;">
+			<b><%= link_to prize.title, prize %></b><br />
+	<%= link_to image_tag(prize.image, :title => prize.description), prize %>
+   
+    <% if current_user && admin_user %>
+    <br />
+   <%= link_to 'Edit', edit_prize_path(prize) %>
+   <%= link_to 'Destroy', prize, confirm: 'Точно? Удалятся и все выданные награды :(', method: :delete %>
+    <% end %>
+	 </div>
+ </div>
 <% end %>
-</table>
+
 
 <br />
-
+<% if current_user && admin_user %>
 <%= link_to 'New Prize', new_prize_path %>
+<% end %>
