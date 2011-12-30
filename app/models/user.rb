@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
   belongs_to :character     # foreign key - character_id
   belongs_to :profession     # foreign key - profession_id
   belongs_to :city     # foreign key - city_id
+  
+  has_many :rewards
 end
