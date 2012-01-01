@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
   validates_presence_of :maxhealth
   validates_presence_of :craft
   validates_uniqueness_of :email
-  validates_inclusion_of :level, :in => 1..120,
+  validates_inclusion_of :level, :in => 0..120,
              :message => "Nononono"
-  validates_inclusion_of :maxhealth, :in => 1..20000,
+  validates_inclusion_of :maxhealth, :in => 0..20000,
              :message => "Nononono"
   validates_inclusion_of :craft, :in => 0..650,
              :message => "Nononono"
