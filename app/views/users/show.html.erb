@@ -3,7 +3,7 @@
 
 
 <div class="span-8 border">
-<p><b>г. <%=@user.city.name%></b></p>
+<p><b>г. <%=link_to @user.city.name, @user.city%></b></p>
 <p>Имя: <b><%= @user.name %></b></p>
 <p>Уровень: <b><%= @user.level %></b></p>
 <p>Профессия: <b><%= @user.profession.name %> (<%= @user.craft %>)</b></p>
