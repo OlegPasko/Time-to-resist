@@ -5,4 +5,9 @@ class PagesController < ApplicationController
     @lastusers = User.find(:all, :order => "created_at DESC", :limit => 14)
     @lastrewards = Reward.find(:all, :order => "created_at DESC", :limit => 7)
   end
+  
+  def gallery
+    @useravas = User.where("length(users.avatar) > 10").sort_by{ rand }
+  end
+  
 end

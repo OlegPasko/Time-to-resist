@@ -1,0 +1,8 @@
+<div class="span-24">
+<% @useravas.each do |ua|%>
+<div class="span-5">
+	<div style="text-align: center;"><%=link_to ua.email, ua %></div>
+	<div style="text-align: center;"><%= link_to image_tag(ua.avatar, :class => "avatar2"), ua %></div>
+</div>
+<% end %>
+</div>

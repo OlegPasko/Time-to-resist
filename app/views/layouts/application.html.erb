@@ -11,7 +11,7 @@
 <div id="user_nav">
 	<%=link_to "На главную", root_path%> | 
   <% if current_user %>
-    Привет, <%= link_to current_user.email, current_user %> <%= link_to "(выйти)", log_out_path %>!
+    Привет, <%= link_to current_user.email, current_user %>, <%= link_to "(редактировать", edit_user_path(current_user) %> | <%= link_to " выйти)", log_out_path %>!
   <% else %>
     <%= link_to "Регистрация", sign_up_path %> |
     <%= link_to "Вход", log_in_path %>
