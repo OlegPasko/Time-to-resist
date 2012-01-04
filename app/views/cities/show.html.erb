@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
-  
+<div class="span-12">
   <h2>г. <%= @city.name %></h2>
-
 <%@users.each do |u|%>
 <%=image_tag u.character.image%> <%=link_to u.email, u%> (<%=u.level%>)<br />
 <%end%>
+
+</div>
+<div class="span-12 last">
+	
+<%=image_tag "http://www.wmich.edu/fortstjoseph/graphics/fort.jpg", :class => "avatar"%>
+</div>
