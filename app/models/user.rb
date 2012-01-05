@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   belongs_to :profession     # foreign key - profession_id
   belongs_to :city     # foreign key - city_id
   
-  has_many :rewards
-  has_many :funds
+  has_many :rewards, :dependent => :destroy 
+  has_many :funds, :dependent => :destroy 
 end
