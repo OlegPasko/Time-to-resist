@@ -1,0 +1,32 @@
+<h1>Listing funds</h1>
+
+<table>
+  <tr>
+  	<th>Кто</th>
+  	<th>Когда</th>
+    <th>Сколько</th>
+    <th>Комментарий</th>
+    <% if current_user && admin_user %>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @funds.each do |fund| %>
+  <tr>
+    <td><%= link_to User.find(fund.user_id).email, User.find(fund.user_id) %></td>
+    <td><%= fund.created_at.strftime('%d.%m.%Y ') %></td>
+    <td><%= fund.taction %></td>
+    <td><%= fund.comment %></td>
+    <% if current_user && admin_user %>
+    <td><%= link_to 'Edit', edit_fund_path(fund) %></td>
+    <td><%= link_to 'Destroy', fund, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if current_user && admin_user %>
+<%= link_to 'New Fund', new_fund_path %>
+<% end %>

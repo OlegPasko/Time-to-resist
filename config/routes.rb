@@ -1,5 +1,7 @@
 Muschool::Application.routes.draw do
 
+  resources :funds
+
   resources :rewards
 
   resources :prizes

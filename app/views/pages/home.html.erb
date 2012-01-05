@@ -12,12 +12,14 @@
 	<h3>Последние награждения</h3>
 	<%@lastrewards.each do |r|%>
 		<%=r.created_at.strftime('%d.%m.%Y ')%> Награда <%=link_to r.prize.title, r.prize, :title => r.prize.description%> вручена <%= image_tag r.user.character.image, :title => r.user.character.name %> <%=link_to r.user.email, r.user%>.<br />
-		<i><%=link_to r.text, r%></i><br />
+		
 	<%end%>
 	
 	<div style="text-align: right;"><b><%= link_to "Все награды >>", prizes_path%></b></div>
 </div>
 <div class="span-6 last">
-	<h3>Угадай кто :)</h3>
-	<p>Альянс в лицах, — тут будет случайная аватарка.</p>
+	<h3>Монет в фонде альянса</h3>
+	<div style="text-align: center;"><h1><%=link_to Fund.sum(:taction), funds_path%></h1></div>
+	<div style="text-align: center;">собрано: <strong><%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> | роздано:<strong><%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong></div>
+
 </div>

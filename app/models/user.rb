@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
   belongs_to :city     # foreign key - city_id
   
   has_many :rewards
+  has_many :funds
 end

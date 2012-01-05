@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230134557) do
+ActiveRecord::Schema.define(:version => 20120105190113) do
 
   create_table "characters", :force => true do |t|
     t.string    "name"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20111230134557) do
     t.timestamp "updated_at",  :null => false
   end
 
+  create_table "funds", :force => true do |t|
+    t.integer  "taction", :default => 0
+    t.integer  "user_id"
+    t.string   "comment"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
   create_table "missions", :force => true do |t|
     t.string    "name"
     t.string    "image"
@@ -45,11 +53,11 @@ ActiveRecord::Schema.define(:version => 20111230134557) do
   end
 
   create_table "prizes", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "image"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string    "title"
+    t.string    "description"
+    t.string    "image"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
   end
 
   create_table "professions", :force => true do |t|
@@ -60,11 +68,11 @@ ActiveRecord::Schema.define(:version => 20111230134557) do
   end
 
   create_table "rewards", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "prize_id"
-    t.string   "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "user_id"
+    t.integer   "prize_id"
+    t.string    "text"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
