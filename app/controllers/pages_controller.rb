@@ -5,6 +5,8 @@ class PagesController < ApplicationController
     @lastusers = User.find(:all, :order => "created_at DESC", :limit => 14)
     @lastrewards = Reward.find(:all, :order => "created_at DESC", :limit => 7)
     @walls = Wall.limit(15)
+    
+    @newwall = Wall.new
   end
   
   def gallery

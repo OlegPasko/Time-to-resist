@@ -27,6 +27,13 @@
 	<%@walls.each do |w|%>
 		<%= link_to w.user.email, w.user, :title => time_ago_in_words(w.created_at)+" назад" %> <%= w.post %> <br />
 	<%end%>
-	<div style="text-align: right;"><%= link_to 'Новая запись', new_wall_path if current_user %> <b><%= link_to "Всё >>", walls_path%></b></div>
+	
+	<%= form_for(@newwall) do |f| %>
+	  <div class="field">
+	    <%= f.text_field :post %>
+	    <%= f.submit "Нафлудить" %>
+	  </div>
+	<% end %>
+	<div style="text-align: right;"><b><%= link_to "Всё >>", walls_path%></b></div>
 </div>
 
