@@ -1,8 +1,8 @@
 <h2><%= @user.character.name %> <%=@user.email%></h2>
+<div class="row">
 
 
-
-<div class="span-8 border">
+<div class="span5">
 <p><b>г. <%=link_to @user.city.name, @user.city%></b></p>
 <p>Имя: <b><%= @user.name %></b></p>
 <p>Уровень: <b><%= @user.level %></b></p>
@@ -20,7 +20,7 @@
 	<%end%>
 </div>
 
-<div class="span-10 border">
+<div class="span7">
 <h3>Награды:</h3>
 <% @user.rewards.each do |r|%>
 <%= link_to image_tag(r.prize.image, :title => r.prize.title), r %>
@@ -32,7 +32,10 @@
 </p>
 </div>
 
-<div class="span-6 last">
+<div class="span4">
 <%= image_tag @user.avatar, :class => "avatar" if @user.avatar? %>
-<div style="text-align: center;"><%= link_to "в новом окне", @user.avatar if @user.avatar? %></div>
+<div style="text-align: center;"><%= link_to "в полный размер", @user.avatar if @user.avatar? %></div>
+</div>
+
+
 </div>

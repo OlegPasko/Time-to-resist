@@ -1,6 +1,6 @@
 <h1>Редактирование информации</h1>
 <% if current_user %>
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :class => "form-stacked" } do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
@@ -12,46 +12,46 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :Игровой_ник %><br />
+    <%= f.label :Игровой_ник %>
     <%= f.text_field :email, :class => "title" %>
   </p>
   <p>*соблюдаем регистр букв (большие и маленькие)</p>
   <p>
-    <%= f.label :Пароль %><br />
+    <%= f.label :Пароль %>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :Подтверждение_пароля %><br />
+    <%= f.label :Подтверждение_пароля %>
     <%= f.password_field :password_confirmation %>
   </p>
   <p>*не стоит указывать пороль игры</p>
   <p>
-    <%= f.label :Реальное_имя %><br />
+    <%= f.label :Реальное_имя %>
     <%= f.text_field :name %>
   </p>
   <table>
   	<tr>  		
 	  <td>
 	  <p>
-	    <%= f.label :Город %><br />
+	    <%= f.label :Город %>
 	    <%= f.collection_select :city_id, City.all, :id, :name %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Тип_персонажа %><br />
+	    <%= f.label :Тип_персонажа %>
 	    <%= f.collection_select :character_id, Character.all, :id, :name %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Профессия %><br />
+	    <%= f.label :Профессия %>
 	    <%= f.collection_select :profession_id, Profession.all, :id, :name %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Призвание %><br />
+	    <%= f.label :Призвание %>
 	    <%= f.collection_select :mission_id, Mission.all, :id, :name %>
 	  </p>
 	  </td>
@@ -60,25 +60,25 @@
   	<tr>  		
 	  <td>
 	  <p>
-	    <%= f.label :Уровень %><br />
+	    <%= f.label :Уровень %>
 	    <%= f.number_field :level %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Максимально_HP %><br />
+	    <%= f.label :Максимально_HP %>
 	    <%= f.number_field :maxhealth %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Уровень_профессии %><br />
+	    <%= f.label :Уровень_профессии %>
 	    <%= f.number_field :craft %>
 	  </p>
 	  </td>
 	  <td>
 	  <p>
-	    <%= f.label :Есть_ли_ружжо_золотое? %><br />
+	    <%= f.label :Есть_ли_ружжо_золотое? %>
 	    <%= f.check_box :zr %>
 	  </p>
 	  </td>
@@ -86,14 +86,14 @@
   </table>
   
   <p>
-  	<%= f.label :Ссылка_на_фото %><br />
-    <%= f.url_field :avatar %>
+  	<%= f.label :Ссылка_на_фото %>
+    <%= f.url_field :avatar, :class => "span9" %>
   </p>
   
   <p>
-    <%= f.label :Немного_о_себе %><br />
-    <%= f.text_area :about, :size => "20x20" %>
+    <%= f.label :Немного_о_себе %>
+    <%= f.text_area :about, :class => "xxlarge" %>
   </p>
-  <p><%= f.submit "Обновить" %></p>
+  <p><%= f.submit "Обновить", :class => "btn primary" %></p>
 <% end %>
 <% end %>

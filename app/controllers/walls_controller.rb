@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WallsController < ApplicationController
   # GET /walls
   # GET /walls.json
@@ -44,7 +45,7 @@ class WallsController < ApplicationController
     @wall.user_id = current_user.id
     respond_to do |format|
       if @wall.save
-        format.html { redirect_to root_path, notice: 'Wall was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Отличненько! Нафлудили на стенке :)' }
         format.json { render json: @wall, status: :created, location: @wall }
       else
         format.html { render action: "new" }

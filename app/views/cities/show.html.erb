@@ -1,12 +1,20 @@
-<p id="notice"><%= notice %></p>
-<div class="span-12">
+<div class="row">
+<div class="span8">
   <h2>г. <%= @city.name %></h2>
 <%@users.each do |u|%>
 <%=image_tag u.character.image%> <%=link_to u.email, u%> (<%=u.level%>)<br />
 <%end%>
 
 </div>
-<div class="span-12 last">
-	
+<div class="span8">	
 <%=image_tag "http://www.wmich.edu/fortstjoseph/graphics/fort.jpg", :class => "avatar"%>
+<h2>Другие города</h2>
+
+<%City.all.each do |c|%>
+	<%if c.users.count > 0%>
+		<%=link_to c.name, c%> (<%= c.users.count %>)<br />
+	<%end%>
+<%end%>
+
+</div>
 </div>

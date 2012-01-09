@@ -1,13 +1,13 @@
 <h1>Вход</h1>
 
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, :class => "form-stacked" do %>
   <p>
-    <%= label_tag :Игровой_ник %><br />
+    <%= label_tag :Игровой_ник %>
     <%= text_field_tag :email, params[:email], :class => "title" %>
   </p>
   <p>
-    <%= label_tag :Пароль %><br />
+    <%= label_tag :Пароль %>
     <%= password_field_tag :password %>
   </p>
-  <p class="button"><%= submit_tag "Войти" %></p>
+  <p class="button"><%= submit_tag "Войти", :class => "btn primary" %></p>
 <% end %>

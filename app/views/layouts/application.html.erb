@@ -7,24 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <%=link_to "Time to resist", root_path, :class => "brand"%>
+          <ul class="nav">
+            <li><%=link_to "Главная", root_path%></li>
+            <li><%= link_to "Все наши", users_path%></li>
+            <li><%= link_to "Города", cities_path%></li>
+          </ul>
+          <p class="pull-right">
+			  <% if current_user %>
+			   <%= link_to  "Привет, "+current_user.email, current_user %>, <%= link_to "(редактировать", edit_user_path(current_user) %> | <%= link_to " выйти)", log_out_path %>!
+			  <% else %>
+			    <%= link_to "Регистрация", sign_up_path %> |
+			    <%= link_to "Вход", log_in_path %>
+			  <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+	
 	<div class="container">
-<div id="user_nav">
-	<%=link_to "На главную", root_path%> | 
-  <% if current_user %>
-    Привет, <%= link_to current_user.email, current_user %>, <%= link_to "(редактировать", edit_user_path(current_user) %> | <%= link_to " выйти)", log_out_path %>!
-  <% else %>
-    <%= link_to "Регистрация", sign_up_path %> |
-    <%= link_to "Вход", log_in_path %>
-  <% end %>
-</div>
-<h1><%=link_to "Time to resist", root_path%> <img src="http://www.timezero.ru/i/smile/crazyny.gif"></h1>
+<div class="content">
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<div class="alert-message <%=name%> fade in" data-alert="alert" >
+<a class="close" href="#">×</a><p><%=msg%></p>
+</div>
 <% end %>
 <%= yield %>
-<br /><hr>
+</div>
+<footer>
 С предложениями и пожеланиями по дальнейшему развитию сайта к <%= link_to User.find(2).email, User.find(2)%>. <br />
 Люди, умеющие рисовать и верстать, пишите так же на почту :) Нужно рисовать/фотошопить наградки и вообще дизайн.
+</footer>
 <!-- Yandex.Metrika informer --><!--<a href="http://metrika.yandex.ru/stat/?id=11620576&amp;from=informer" target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/11620576/1_1_FFFFFFFF_EFEFEFFF_0_uniques" style="width:80px; height:15px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (уникальные посетители)" /></a> --><!-- /Yandex.Metrika informer --><!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter11620576 = new Ya.Metrika({id:11620576, clickmap:true, trackLinks:true, webvisor:true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/11620576" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 	</div>
 </body>

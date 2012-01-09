@@ -1,26 +1,26 @@
-<h1>Listing cities</h1>
+<h2>Города альянса</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="row">
 <% @cities.each do |city| %>
-  <tr>
-    <td><%= city.name %></td>
-    <td><%= link_to 'Show', city %></td>
-    <% if current_user && admin_user %>
-    <td><%= link_to 'Edit', edit_city_path(city) %></td>
-    <td><%= link_to 'Destroy', city, confirm: 'Are you sure?', method: :delete %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+<div class="span4">
+	<% if current_user && admin_user %>
+		<%= link_to city.name, city %> (<%=city.users.count%>)
+	<%else%>
+		<%if city.users.count > 0%>
+			<%= link_to city.name, city %> (<%=city.users.count%>)
+		<%end%>
+	<% end %>
 
-<br />
+    <% if current_user && admin_user %>
+    <%= link_to 'e', edit_city_path(city) %>
+    <%= link_to 'x', city, confirm: 'Are you sure?', method: :delete %>
+    <% end %>
+    
+</div>
+<% end %>
+
+</div>
+
 <% if current_user && admin_user %>
 <%= link_to 'New City', new_city_path %>
 <% end %>
