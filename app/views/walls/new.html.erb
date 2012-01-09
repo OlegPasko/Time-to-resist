@@ -1,0 +1,11 @@
+<h2>Новая запись на стенке</h2>
+
+<%= form_for(@wall) do |f| %>
+
+  <div class="field">
+    <%= f.text_field :post %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Нафлудить" %>
+  </div>
+<% end %>

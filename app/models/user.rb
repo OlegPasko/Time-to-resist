@@ -29,4 +29,5 @@ class User < ActiveRecord::Base
   
   has_many :rewards, :dependent => :destroy 
   has_many :funds, :dependent => :destroy 
+  has_many :walls, :dependent => :destroy 
 end

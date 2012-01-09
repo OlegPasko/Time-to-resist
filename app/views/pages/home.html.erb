@@ -8,7 +8,7 @@
 <div style="text-align: right;"><b><%= link_to "Посмотреть всех >>", users_path%></b></div>
 <div style="text-align: right;"><b><%= link_to "Альянс в лицах >>", gallery_path%></b></div>
 </div>
-<div class="span-10 border">
+<div class="span-8 border">
 	<h3>Последние награждения</h3>
 	<%@lastrewards.each do |r|%>
 		<%=r.created_at.strftime('%d.%m.%Y ')%> Награда <%=link_to r.prize.title, r.prize, :title => r.prize.description%> вручена <%= image_tag r.user.character.image, :title => r.user.character.name %> <%=link_to r.user.email, r.user%>.<br />
@@ -16,10 +16,17 @@
 	<%end%>
 	
 	<div style="text-align: right;"><b><%= link_to "Все награды >>", prizes_path%></b></div>
-</div>
-<div class="span-6 last">
-	<h3>Монет в фонде альянса</h3>
+	<br />
+		<h3>Монет в фонде «Перекач»</h3>
 	<div style="text-align: center;"><h1><%=link_to Fund.sum(:taction), funds_path%></h1></div>
 	<div style="text-align: center;">собрано: <strong><%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> | роздано:<strong><%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong></div>
 
 </div>
+<div class="span-8 last">
+	<h3>Стенка</h3>
+	<%@walls.each do |w|%>
+		<%= link_to w.user.email, w.user, :title => time_ago_in_words(w.created_at)+" назад" %> <%= w.post %> <br />
+	<%end%>
+	<div style="text-align: right;"><%= link_to 'Новая запись', new_wall_path if current_user %> <b><%= link_to "Всё >>", walls_path%></b></div>
+</div>
+
