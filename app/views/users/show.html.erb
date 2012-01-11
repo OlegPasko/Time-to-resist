@@ -10,7 +10,10 @@
 <p>Максимум HP: <b><%= @user.maxhealth %></b></p>
 
 <p>О себе: <b><%= @user.mission.name %>. <br /><%= @user.about %></b></p>
-<p><%if current_user %><%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%elsif admin_user%><%=link_to "Админчег? Поредактируем пользователя? :)", edit_user_path(@user)%><%end%><%end%></p>
+<p><%if current_user %>
+	<%if @user.id == current_user.id%><%=link_to "Редактировать информацию о себе", edit_user_path(@user)%><%end%>
+	<%if admin_user %><%=link_to "Админчег? Поредактируем пользователя? :)", edit_user_path(@user)%><%end%>
+	<%end%></p>
 
 	<%if @user.funds.where(:taction => 0..99999999).count > 0%>
 		<h3>Внесено в фонд: $ <%= @user.funds.where(:taction => 0..99999999).sum(:taction) %></h3>
