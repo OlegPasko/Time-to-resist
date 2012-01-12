@@ -1,5 +1,5 @@
 <h1>Редактирование информации</h1>
-<% if current_user %>
+<% if (current_user.id == @user.id) or admin_user %>
 <%= form_for @user, :html => { :class => "form-stacked" } do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
