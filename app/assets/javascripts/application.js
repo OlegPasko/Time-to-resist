@@ -19,9 +19,3 @@ $(document).ready(function() {
         "aaSorting": [[ 0, "desc" ]]
     } );
 } );
-
-$(function () {
-              $("a[rel=twipsy]").twipsy({
-                live: true
-              })
-            })
