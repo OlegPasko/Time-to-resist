@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <h4>Работа от <%= link_to @tender.user.email, @tender.user %></h4>
+</p>
+<p>
+  <%= @tender.comment %>
+</p>
+<p>
+  <%= image_tag @tender.img %>
+</p>
+
+
+
+
+
+<% if admin_user or (current_user.id == @tender.user.id)%>
+<%= link_to 'Редактировать', edit_tender_path(@tender) %> |
+<%end%>
+<%= link_to 'Ко всем работам', tenders_path %>

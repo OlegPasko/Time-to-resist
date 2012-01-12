@@ -1,0 +1,31 @@
+<%= form_for(@tender, :html => { :class => "form-stacked" }) do |f| %>
+  <% if @tender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tender.errors.count, "error") %> prohibited this tender from being saved:</h2>
+
+      <ul>
+      <% @tender.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Изображение %>
+    <%= f.text_field :img, :class => "span10", :placeholder => "http://site.ru/blablabla/kartinko.jpg" %>
+  </div>
+  <div class="field">
+    <%= f.label :Комментарий %>
+    <%= f.text_field :comment, :class => "span10", :placeholder => "немного о работе, до 300 символов" %>
+  </div>
+  <br />
+    *для загрузки картинок можно использовать сервисы http://savepic.ru/ или http://www.radikal.ru/
+  <br />
+  <hr>
+  <div>
+    <%= f.submit "Тадам!", :class => "btn primary"%>
+  </div>
+  
+  
+<% end %>

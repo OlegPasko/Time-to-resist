@@ -1,5 +1,7 @@
 Muschool::Application.routes.draw do
 
+  resources :tenders
+
   resources :walls
 
   resources :funds

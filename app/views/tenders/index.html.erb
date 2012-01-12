@@ -1,0 +1,17 @@
+<h1>Все работы  <div style="float: right;"><%= link_to 'Добавить свою работу!', new_tender_path, :class => "btn success" if current_user %></div></h1>
+
+
+
+<div class="row">
+<% @tenders.each do |tender| %>
+  <div class="span4">
+   
+    <div style="text-align: center;"><%= link_to tender.user.email, tender.user %> <% if admin_user or (current_user.id == tender.user.id)%><%= link_to 'x', tender, confirm: 'Точно удалить работу?', method: :delete %><%end%></div>
+     <div class="media-grid"><%= link_to image_tag(tender.img, :class => "avatar2"), tender %></div>
+    
+
+    
+  </div>
+<% end %>
+</table>
+</div>
