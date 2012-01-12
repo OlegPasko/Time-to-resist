@@ -14,8 +14,8 @@
 	
 		
 		
-	<div style="text-align: center;"><h3>Наши фонды</h3><h2>«Перекач»: <%=link_to Fund.sum(:taction), funds_path%></h2></div>
-	<div style="text-align: center;">собрано: <strong><%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> | роздано:<strong><%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong></div>
+	<div style="text-align: center;"><h3>Наши фонды</h3><h2>«Перекач»: $ <%=link_to Fund.sum(:taction), funds_path%></h2></div>
+	<div style="text-align: center;">собрано: <strong>$ <%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> | роздано:<strong>$ <%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong></div>
 <br />
 	<div style="text-align: center;"><h2><%=link_to "Конкурс на логотип", tenders_path%></h2>
 	<%= link_to 'Добавить свою работу!', new_tender_path, :class => "btn success" if current_user %></div>
