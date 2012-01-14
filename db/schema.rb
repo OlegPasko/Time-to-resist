@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114180123) do
+ActiveRecord::Schema.define(:version => 20120114195234) do
 
   create_table "characters", :force => true do |t|
     t.string    "name"
@@ -92,23 +92,23 @@ ActiveRecord::Schema.define(:version => 20120114180123) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "name"
-    t.string    "email"
-    t.string    "password_digest"
-    t.timestamp "created_at",                        :null => false
-    t.timestamp "updated_at",                        :null => false
-    t.integer   "character_id"
-    t.integer   "profession_id"
-    t.integer   "level"
-    t.string    "city"
-    t.integer   "maxhealth"
-    t.integer   "mission_id"
-    t.boolean   "zr"
-    t.integer   "craft"
-    t.integer   "city_id"
-    t.string    "about"
-    t.string    "avatar"
-    t.boolean   "status",          :default => true
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "character_id"
+    t.integer  "profession_id"
+    t.integer  "level"
+    t.string   "city"
+    t.integer  "maxhealth"
+    t.integer  "mission_id"
+    t.boolean  "zr"
+    t.integer  "craft"
+    t.integer  "city_id"
+    t.string   "about"
+    t.string   "avatar"
+    t.boolean  "status",          :default => true
   end
 
   create_table "walls", :force => true do |t|
