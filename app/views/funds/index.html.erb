@@ -1,5 +1,12 @@
 <h1>Транзакции по фонду альянса</h1>
 
+<% if Info.where(:location => 3).first %>
+<div class="alert-message block-message success">
+	<a class="close" href="#">&times;</a>
+<%= raw(Info.where(:location => 3).first.text) %>
+</div>
+<%end%>
+
 <table class="condensed-table">
   <tr>
   	<th>Кто</th>
