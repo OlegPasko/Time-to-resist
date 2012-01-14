@@ -13,7 +13,7 @@
   <% end %>
   <p>
     <%= f.label :Игровой_ник %>
-    <%= f.text_field :email, :class => "title" %>
+    <%= f.text_field :email %>
   </p>
   <p>*соблюдаем регистр букв (большие и маленькие)</p>
   <p>
@@ -94,6 +94,14 @@
     <%= f.label :Немного_о_себе %>
     <%= f.text_area :about, :class => "xxlarge" %>
   </p>
+    <%if admin_user%>
+  <p>
+    <%= f.label :Активен? %>
+    <%= f.check_box :status %><br />
+    Видно только админам, нужно снять, если регаем этого пользователя самостоятельно.
+  </p>
+  
+  <%end%>
   <p><%= f.submit "Обновить", :class => "btn primary" %></p>
 <% end %>
 <% end %>

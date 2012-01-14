@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114160257) do
+ActiveRecord::Schema.define(:version => 20120114180123) do
 
   create_table "characters", :force => true do |t|
     t.string    "name"
@@ -43,13 +43,14 @@ ActiveRecord::Schema.define(:version => 20120114160257) do
     t.string    "comment"
     t.timestamp "created_at",                :null => false
     t.timestamp "updated_at",                :null => false
+    t.integer   "gold",       :default => 0
   end
 
   create_table "infos", :force => true do |t|
-    t.text     "text",       :limit => 255
-    t.integer  "location",                  :default => 1
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.text      "text"
+    t.integer   "location",   :default => 1
+    t.timestamp "created_at",                :null => false
+    t.timestamp "updated_at",                :null => false
   end
 
   create_table "missions", :force => true do |t|
@@ -83,19 +84,19 @@ ActiveRecord::Schema.define(:version => 20120114160257) do
   end
 
   create_table "tenders", :force => true do |t|
-    t.string   "img"
-    t.string   "comment"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "img"
+    t.string    "comment"
+    t.integer   "user_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string    "name"
     t.string    "email"
     t.string    "password_digest"
-    t.timestamp "created_at",      :null => false
-    t.timestamp "updated_at",      :null => false
+    t.timestamp "created_at",                        :null => false
+    t.timestamp "updated_at",                        :null => false
     t.integer   "character_id"
     t.integer   "profession_id"
     t.integer   "level"
@@ -107,13 +108,14 @@ ActiveRecord::Schema.define(:version => 20120114160257) do
     t.integer   "city_id"
     t.string    "about"
     t.string    "avatar"
+    t.boolean   "status",          :default => true
   end
 
   create_table "walls", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "post"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "user_id"
+    t.string    "post"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
 end

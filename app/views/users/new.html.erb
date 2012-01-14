@@ -93,5 +93,14 @@
     <%= f.label :Немного_о_себе %>
     <%= f.text_area :about, :size => "20x20" %>
   </p>
+  <%if admin_user%>
+  <p>
+    <%= f.label :Активен? %>
+    <%= f.check_box :status %><br />
+    Видно только админам, нужно снять, если регаем этого пользователя самостоятельно.
+  </p>
+  
+  <%end%>
+  
   <p><%= f.submit "Зарегиццо", :class => "btn primary" %></p>
 <% end %>

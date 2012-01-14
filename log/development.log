@@ -1,45 +1,1013 @@
-DEPRECATION WARNING: ActiveSupport::Memoizable is deprecated and will be removed in future releases,simply use Ruby memoization pattern instead. (called from mon_synchronize at c:/ror/Ruby1.9.2/lib/ruby/1.9.1/monitor.rb:201)
-  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-Migrating to CreateUsers (20111227220302)
-Migrating to CreateCharacters (20111229141918)
-Migrating to CreateProfessions (20111229142053)
-Migrating to AddFieldsToUsers (20111229142758)
-Migrating to CreateMissions (20111229142833)
-Migrating to CreateCities (20111229150227)
-Migrating to AddCitiesToUsers (20111229150436)
-Migrating to AddAboutToUsers (20111229160716)
-Migrating to AddAvatarToUsers (20111229231603)
-Migrating to CreatePrizes (20111230134153)
-Migrating to CreateRewards (20111230134557)
-Migrating to CreateFunds (20120105190113)
-Migrating to CreateTenders (20120112121031)
-Migrating to CreateInfos (20120114104955)
-Migrating to ChangeTextFormatInInfo (20120114160257)
-  [1m[35m (0.0ms)[0m  select sqlite_version(*)
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "altered_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255), "location" integer DEFAULT 1, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("infos")[0m
-  [1m[35m (1.0ms)[0m  SELECT * FROM "infos"
-  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_infos" ("id","text","location","created_at","updated_at") VALUES (1, 'Тестовое сообщение', 2, '2012-01-14 10:56:01.931640', '2012-01-14 11:08:28.687500')[0m
-  [1m[35m (0.0ms)[0m  DROP TABLE "infos"
-  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" text(255), "location" integer DEFAULT 1, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("altered_infos")
-  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "altered_infos"[0m
-  [1m[35m (0.0ms)[0m  INSERT INTO "infos" ("id","text","location","created_at","updated_at") VALUES (1, 'Тестовое сообщение', 2, '2012-01-14 10:56:01.931640', '2012-01-14 11:08:28.687500')
-  [1m[36m (1.0ms)[0m  [1mDROP TABLE "altered_infos"[0m
-  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120114160257')
-  [1m[36m (94.7ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  select sqlite_version(*)
-  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("characters")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("cities")[0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("exercises")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("funds")[0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("infos")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("missions")[0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("prizes")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("professions")[0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("rewards")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tenders")[0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
-  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("walls")[0m
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-01-14 20:18:59 +0200
+DEPRECATION WARNING: ActiveSupport::Memoizable is deprecated and will be removed in future releases,simply use Ruby memoization pattern instead. (called from service at c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.0.rc1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.0.rc1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.3.5) lib/rack/methodoverride.rb:24:in `call'
+  rack (1.3.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.0.rc1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.3.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.0.rc1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.0.rc1) lib/rails/engine.rb:479:in `call'
+  rack (1.3.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.0.rc1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.3.5) lib/rack/handler/webrick.rb:59:in `service'
+  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/ror/Ruby1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered c:/ror/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (58.6ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2012-01-14 20:19:10 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-14 20:19:10 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT 14
+  [1m[36mReward Load (0.0ms)[0m  [1mSELECT "rewards".* FROM "rewards" ORDER BY created_at DESC LIMIT 7[0m
+  [1m[35mInfo Load (0.0ms)[0m  SELECT "infos".* FROM "infos" WHERE "infos"."location" = 1 LIMIT 1
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 27 LIMIT 1
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 6 LIMIT 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 30 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (2.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" [0m
+  [1m[35m (0.0ms)[0m  SELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN 0 AND 99999999)
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN -9999999999 AND 0)[0m
+  [1m[35mWall Load (0.0ms)[0m  SELECT "walls".* FROM "walls" ORDER BY created_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 47 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 92 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 30 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (456.1ms)
+  [1m[35mUser Load (84.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 1332ms (Views: 558.6ms | ActiveRecord: 131.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /demo_table.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/symbol_soldier_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /symbol_soldier_small_chat.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/symbol_duelist_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:12 +0200
+Served asset /symbol_duelist_small_chat.png - 304 Not Modified (1ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (67.4ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 88ms (Views: 84.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:19:15 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:19:19 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"loKK+aojlYoCODpuZC9tshqFdk4RDnWusY38/2IEtQk=", "email"=>"ANATHEM", "password"=>"[FILTERED]", "commit"=>"Войти"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ANATHEM' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 106ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT 14
+  [1m[36mReward Load (0.0ms)[0m  [1mSELECT "rewards".* FROM "rewards" ORDER BY created_at DESC LIMIT 7[0m
+  [1m[35mInfo Load (1.0ms)[0m  SELECT "infos".* FROM "infos" WHERE "infos"."location" = 1 LIMIT 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 27 LIMIT 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 6 LIMIT 1
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 30 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("funds"."taction") AS sum_id FROM "funds" 
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN 0 AND 99999999)[0m
+  [1m[35m (0.0ms)[0m  SELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN -9999999999 AND 0)
+  [1m[36mWall Load (0.0ms)[0m  [1mSELECT "walls".* FROM "walls" ORDER BY created_at DESC LIMIT 15[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 47 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 92 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1
+  Rendered pages/home.html.erb within layouts/application (85.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 116ms (Views: 106.4ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:23 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:19:24 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_soldier_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:24 +0200
+Served asset /symbol_soldier_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_duelist_small_chat.png" for 127.0.0.1 at 2012-01-14 20:19:24 +0200
+Served asset /symbol_duelist_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Processing by UsersController#new as HTML
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (1.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" 
+  Rendered users/new.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:19:26 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT 14[0m
+  [1m[35mReward Load (0.0ms)[0m  SELECT "rewards".* FROM "rewards" ORDER BY created_at DESC LIMIT 7
+  [1m[36mInfo Load (0.0ms)[0m  [1mSELECT "infos".* FROM "infos" WHERE "infos"."location" = 1 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 27 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 6 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (2.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 17 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" [0m
+  [1m[35m (0.0ms)[0m  SELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN 0 AND 99999999)
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN -9999999999 AND 0)[0m
+  [1m[35mWall Load (1.0ms)[0m  SELECT "walls".* FROM "walls" ORDER BY created_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 47 LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 92 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 30 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (70.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 122ms (Views: 98.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:54 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_duelist_small_chat.png" for 127.0.0.1 at 2012-01-14 20:20:55 +0200
+Served asset /symbol_duelist_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:20:55 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_soldier_small_chat.png" for 127.0.0.1 at 2012-01-14 20:20:55 +0200
+Served asset /symbol_soldier_small_chat.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2012-01-14 20:20:55 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (12.7ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 25ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:20:56 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Processing by UsersController#new as HTML
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" 
+  Rendered users/new.html.erb within layouts/application (22.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:21:34 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:22:29 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (1.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (0.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  Rendered users/new.html.erb within layouts/application (16.6ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:22:30 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Processing by UsersController#new as HTML
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/new.html.erb within layouts/application (17.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:22:48 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Processing by UsersController#new as HTML
+  [1m[35mCity Load (0.0ms)[0m  SELECT "cities".* FROM "cities" 
+  [1m[36mCharacter Load (0.0ms)[0m  [1mSELECT "characters".* FROM "characters" [0m
+  [1m[35mProfession Load (0.0ms)[0m  SELECT "professions".* FROM "professions" 
+  [1m[36mMission Load (1.0ms)[0m  [1mSELECT "missions".* FROM "missions" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/new.html.erb within layouts/application (16.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:23:21 +0200
+Served asset /bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Processing by UsersController#new as HTML
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (1.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (0.0ms)[0m  SELECT "missions".* FROM "missions" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/new.html.erb within layouts/application (31.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:23:33 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY created_at DESC LIMIT 14[0m
+  [1m[35mReward Load (0.0ms)[0m  SELECT "rewards".* FROM "rewards" ORDER BY created_at DESC LIMIT 7
+  [1m[36mInfo Load (1.0ms)[0m  [1mSELECT "infos".* FROM "infos" WHERE "infos"."location" = 1 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 27 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (1.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 6 LIMIT 1[0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 2 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 17 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "characters".* FROM "characters" WHERE "characters"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 24 LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" [0m
+  [1m[35m (0.0ms)[0m  SELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN 0 AND 99999999)
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("funds"."taction") AS sum_id FROM "funds" WHERE ("funds"."taction" BETWEEN -9999999999 AND 0)[0m
+  [1m[35mWall Load (0.0ms)[0m  SELECT "walls".* FROM "walls" ORDER BY created_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 47 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 27 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 92 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 89 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 30 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 39 LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (106.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Completed 200 OK in 126ms (Views: 112.3ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_adventurer_small_chat.png" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /symbol_adventurer_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_soldier_small_chat.png" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /symbol_soldier_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/symbol_duelist_small_chat.png" for 127.0.0.1 at 2012-01-14 20:25:36 +0200
+Served asset /symbol_duelist_small_chat.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/99" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"99"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "99"]]
+  [1m[36mCharacter Load (1.0ms)[0m  [1mSELECT "characters".* FROM "characters" WHERE "characters"."id" = 1 LIMIT 1[0m
+  [1m[35mCity Load (1.0ms)[0m  SELECT "cities".* FROM "cities" WHERE "cities"."id" = 5 LIMIT 1
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" WHERE "professions"."id" = 3 LIMIT 1[0m
+  [1m[35mMission Load (1.0ms)[0m  SELECT "missions".* FROM "missions" WHERE "missions"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "funds" WHERE "funds"."user_id" = 99 AND ("funds"."taction" BETWEEN 0 AND 99999999)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "funds" WHERE "funds"."user_id" = 99 AND ("funds"."taction" BETWEEN -9999999999 AND 0)[0m
+  [1m[35mReward Load (0.0ms)[0m  SELECT "rewards".* FROM "rewards" WHERE "rewards"."user_id" = 99
+  Rendered users/show.html.erb within layouts/application (249.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 263ms (Views: 258.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:25:37 +0200
+Served asset /bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/99/edit" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"99"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "99"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+  [1m[36mCity Load (0.0ms)[0m  [1mSELECT "cities".* FROM "cities" [0m
+  [1m[35mCharacter Load (0.0ms)[0m  SELECT "characters".* FROM "characters" 
+  [1m[36mProfession Load (0.0ms)[0m  [1mSELECT "professions".* FROM "professions" [0m
+  [1m[35mMission Load (1.0ms)[0m  SELECT "missions".* FROM "missions" 
+  Rendered users/edit.html.erb within layouts/application (16.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alerts.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /bootstrap-alerts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/demo_table.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /demo_table.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-14 20:25:38 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg.png" for 127.0.0.1 at 2012-01-14 20:25:39 +0200
+Served asset /bg.png - 304 Not Modified (0ms)

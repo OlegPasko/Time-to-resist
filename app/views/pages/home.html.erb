@@ -15,6 +15,7 @@
 <div style="text-align: right;"><b><%= link_to "Посмотреть всех >>", users_path%></b></div>
 <div style="text-align: right;"><b><%= link_to "Альянс в лицах >>", gallery_path%></b></div>
 <%= link_to "Админ информер", infos_path if admin_user %>
+<%= link_to "Зарегить кого то", sign_up_path if admin_user %>
 </div>
 <div class="span-one-third">
 
