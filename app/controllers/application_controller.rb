@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   def admin_user
-    current_user && current_user.id == (2 or 3 or 14)
+    current_user && (current_user.id == 2 or current_user.id == 14)
   end
   helper_method :current_user
   helper_method :admin_user
