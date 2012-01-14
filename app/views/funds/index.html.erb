@@ -26,10 +26,10 @@
     <td><%= link_to User.find(fund.user_id).email, User.find(fund.user_id) %></td>
     <td><%= fund.created_at.strftime('%d.%m.%Y ') %></td>
     <td>
-    	<% if fund.taction > 0 %>
+    	<% if fund.taction.to_i > 0 %>
     		$ <%= fund.taction %>
     	<% end %> 
-    	<%if fund.gold > 0%>
+    	<%if fund.gold.to_i > 0%>
     		<%= fund.gold %> G.
     	<% end %>
     	</td>
