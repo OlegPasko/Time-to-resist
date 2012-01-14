@@ -1,3 +1,9 @@
+<% if Info.where(:location => 1).first %>
+<div class="alert-message block-message warning">
+	<a class="close" href="#">&times;</a>
+<%= raw(Info.where(:location => 1).first.text) %>
+</div>
+<%end%>
 <div class="row">
 <div class="span-one-third">
 
@@ -8,6 +14,7 @@
 <br />
 <div style="text-align: right;"><b><%= link_to "Посмотреть всех >>", users_path%></b></div>
 <div style="text-align: right;"><b><%= link_to "Альянс в лицах >>", gallery_path%></b></div>
+<%= link_to "Админ информер", infos_path if admin_user %>
 </div>
 <div class="span-one-third">
 

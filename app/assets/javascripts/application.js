@@ -18,4 +18,5 @@ $(document).ready(function() {
         "sPaginationType": "full_numbers",
         "aaSorting": [[ 0, "desc" ]]
     } );
+$(".alert-message").alert('');
 } );
