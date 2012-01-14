@@ -1,4 +1,4 @@
-<h1>Транзакции по фонду альянса</h1>
+<h1>Фонд «Перекач»</h1>
 
 <% if Info.where(:location => 3).first %>
 <div class="alert-message block-message success">
@@ -9,6 +9,9 @@
 <% if current_user && admin_user %>
 <%= link_to 'New Fund', new_fund_path %>
 <% end %>
+
+В наличии $ <strong><%= Fund.sum(:taction) %></strong>, в т.ч. собрано: <strong>$ <%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> и роздано: <strong>$ <%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong>. Кроме того имеется <strong><%= Fund.sum(:gold) %> золота</strong>.
+
 <table class="condensed-table">
   <tr>
   	<th>Кто</th>
@@ -27,10 +30,10 @@
     <td><%= fund.created_at.strftime('%d.%m.%Y ') %></td>
     <td>
     	<% if fund.taction.to_i != 0 %>
-    		$ <%= fund.taction %>
+    		<div style="<%if fund.taction < 0%>color: red;<%else%>color: green;<%end%>">$ <%= fund.taction %></div>
     	<% end %> 
     	<%if fund.gold.to_i != 0 %>
-    		<%= fund.gold %> G.
+    		<div style="color: orange;"><%= fund.gold %> G.</div>
     	<% end %>
     	</td>
     <td><%= fund.comment %></td>
