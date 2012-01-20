@@ -1,5 +1,5 @@
 <h1>Фонд «Перекач»</h1>
-
+<%if current_user%>
 <% if Info.where(:location => 3).first %>
 <div class="alert-message block-message success">
 	<a class="close" href="#">&times;</a>
@@ -46,6 +46,9 @@
 </table>
 
 <br />
-<% if current_user && admin_user %>
+<% if admin_user %>
 <%= link_to 'New Fund', new_fund_path %>
 <% end %>
+<%else%>
+<%= render "layouts/auth"%>
+<%end%>

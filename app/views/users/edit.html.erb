@@ -99,12 +99,15 @@
       </ul>
     </div>
   <% end %>
-    <p>
+  <p>
     <%= f.label :Игровой_ник %>
     <%= f.text_field :email %>
   </p>
   <p>*соблюдаем регистр букв (большие и маленькие)</p>
-  
+  <p>
+    <%= f.label :День_и_месяц_рождения %>
+    <%= f.date_select :bd, :use_month_numbers => true, :discard_year => true, :order => [:day, :month], :include_blank => true %>
+  </p>
 	  <p>
 	    <%= f.label :Тип_персонажа %>
 	    <%= f.collection_select :character_id, Character.all, :id, :name %>

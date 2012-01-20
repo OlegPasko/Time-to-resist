@@ -1,3 +1,4 @@
+<% if current_user %>
 <h1>Все работы  <div style="float: right;"><%= link_to 'Добавить свою работу!', new_tender_path, :class => "btn success" if current_user %></div></h1>
 
 <% if Info.where(:location => 2).first %>
@@ -20,3 +21,6 @@
 <% end %>
 </table>
 </div>
+<%else%>
+<%= render "layouts/auth"%>
+<%end%>

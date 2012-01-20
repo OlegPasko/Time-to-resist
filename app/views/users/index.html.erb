@@ -1,5 +1,5 @@
 <h1>Все участники "под фильтром"</h1>
-
+<% if current_user %>
 <table id="users" class="condensed-table">
 	<thead>
 		<th>Lvl.</th><th>Ник</th><th>HP</th><th>Город</th><th>Профа</th><th>Навык</th><th>Тип</th><% if current_user && admin_user %><th>ID</th><%end%>
@@ -8,7 +8,7 @@
 		<%@users.each do |u|%>
 		<tr>
 			<td><%=u.level%></td>
-			<td><%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%></td>
+			<td><%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%> <%if u.status == false %><span class="label">н/а</span><%end%></td>
 			<td><%=u.maxhealth%></td>
 			<td><%= link_to u.city.name, u.city%></td>
 			<td><%=u.profession.name%></td>
@@ -22,3 +22,6 @@
 	</tbody>
 </table>
 <br /><br />
+<%else%>
+<%= render "layouts/auth"%>
+<%end%>

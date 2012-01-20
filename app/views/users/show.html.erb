@@ -1,4 +1,4 @@
-<h2><%= @user.character.name %> <%=@user.email%></h2>
+<h2><%= @user.character.name %> <%=@user.email%> <%if @user.status == false %><span class="label">не активен</span><%end%></h2>
 <div class="row">
 
 
