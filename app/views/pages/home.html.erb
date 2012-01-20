@@ -17,10 +17,7 @@
 <%= link_to "Админ информер", infos_path if admin_user %>
 <%= link_to "Зарегить кого то", sign_up_path if admin_user %>
 <br />
-<h4>Близятся ДР</h4>
-<%User.where(:bd => 1.days.ago .. 1.week.from_now).each do |u| %>
-	<%= u.bd.strftime('%d.%m') %> — <%= link_to u.name+" ("+u.email+")", u %><br />
-<%end%>
+
 </div>
 <div class="span-one-third">
 

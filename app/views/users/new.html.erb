@@ -90,8 +90,8 @@
     <%= f.url_field :avatar, :class => "span9" %>
   </p>
   <p>
-    <%= f.label :День_и_месяц_рождения %>
-    <%= f.date_select :bd, :use_month_numbers => true, :discard_year => true, :order => [:day, :month], :include_blank => true %>
+    <% f.label :День_и_месяц_рождения %>
+    <% f.date_select :bd, :use_month_numbers => true, :discard_year => true, :order => [:day, :month], :include_blank => true %>
   </p>
   <p>
     <%= f.label :Немного_о_себе %>
