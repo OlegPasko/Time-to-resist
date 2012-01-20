@@ -1,5 +1,13 @@
 <h1>Редактирование информации</h1>
 <% if (current_user.id == @user.id) or admin_user %>
+<ul class="tabs">
+  <li class="active"><a href="#home">Основное</a></li>
+  <li><a href="#profile">Личное</a></li>
+</ul>
+ 
+<div class="pill-content">
+  <div class="active" id="home">
+
 <%= form_for @user, :html => { :class => "form-stacked" } do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -11,52 +19,10 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label :Игровой_ник %>
-    <%= f.text_field :email %>
-  </p>
-  <p>*соблюдаем регистр букв (большие и маленькие)</p>
-  <p>
-    <%= f.label :Пароль %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :Подтверждение_пароля %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>*указываем, только если хотим сменить</p>
-  <p>
-    <%= f.label :Реальное_имя %>
-    <%= f.text_field :name %>
-  </p>
-  <table>
-  	<tr>  		
-	  <td>
-	  <p>
-	    <%= f.label :Город %>
-	    <%= f.collection_select :city_id, City.all, :id, :name %>
-	  </p>
-	  </td>
-	  <td>
-	  <p>
-	    <%= f.label :Тип_персонажа %>
-	    <%= f.collection_select :character_id, Character.all, :id, :name %>
-	  </p>
-	  </td>
-	  <td>
-	  <p>
-	    <%= f.label :Профессия %>
-	    <%= f.collection_select :profession_id, Profession.all, :id, :name %>
-	  </p>
-	  </td>
-	  <td>
-	  <p>
-	    <%= f.label :Призвание %>
-	    <%= f.collection_select :mission_id, Mission.all, :id, :name %>
-	  </p>
-	  </td>
-	</tr>
 
+
+
+  <table>
   	<tr>  		
 	  <td>
 	  <p>
@@ -76,6 +42,20 @@
 	    <%= f.number_field :craft %>
 	  </p>
 	  </td>
+	</tr>
+  	<tr>  		
+	  <td>
+	  <p>
+	    <%= f.label :Город %>
+	    <%= f.collection_select :city_id, City.all, :id, :name %>
+	  </p>
+	  </td>
+	  <td>
+	  <p>
+	    <%= f.label :Призвание %>
+	    <%= f.collection_select :mission_id, Mission.all, :id, :name %>
+	  </p>
+	  </td>
 	  <td>
 	  <p>
 	    <%= f.label :Есть_ли_ружжо_золотое? %>
@@ -83,6 +63,8 @@
 	  </p>
 	  </td>
 	</tr>
+
+
   </table>
   
   <p>
@@ -104,4 +86,50 @@
   <%end%>
   <p><%= f.submit "Обновить", :class => "btn primary" %></p>
 <% end %>
+</div>
+  <div id="profile">
+  	<%= form_for @user, :html => { :class => "form-stacked" } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <p>
+    <%= f.label :Игровой_ник %>
+    <%= f.text_field :email %>
+  </p>
+  <p>*соблюдаем регистр букв (большие и маленькие)</p>
+  
+	  <p>
+	    <%= f.label :Тип_персонажа %>
+	    <%= f.collection_select :character_id, Character.all, :id, :name %>
+	  </p>
+	  <p>
+	    <%= f.label :Профессия %>
+	    <%= f.collection_select :profession_id, Profession.all, :id, :name %>
+	  </p>
+  <p>
+    <%= f.label :Пароль %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :Подтверждение_пароля %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>*указываем, только если хотим сменить. Следите за автозаполнением браузеров, может само подставлять.</p>
+  <p>
+    <%= f.label :Реальное_имя %>
+    <%= f.text_field :name %>
+  </p>
+  <p><%= f.submit "Обновить", :class => "btn primary" %></p>
+  </div>
+    <%end%>
+</div>
+
+
 <% end %>

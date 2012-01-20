@@ -19,4 +19,5 @@ $(document).ready(function() {
         "aaSorting": [[ 0, "desc" ]]
     } );
 $(".alert-message").alert('');
+$('.tabs').tabs()
 } );
