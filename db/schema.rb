@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120120142944) do
+ActiveRecord::Schema.define(:version => 20120120200252) do
 
   create_table "characters", :force => true do |t|
     t.string    "name"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(:version => 20120120142944) do
     t.string    "image"
     t.timestamp "created_at", :null => false
     t.timestamp "updated_at", :null => false
+  end
+
+  create_table "plushkis", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "sum"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "prizes", :force => true do |t|

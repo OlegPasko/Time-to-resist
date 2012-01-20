@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @plushki.user_id %>
+</p>
+
+<p>
+  <b>Sum:</b>
+  <%= @plushki.sum %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @plushki.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_plushki_path(@plushki) %> |
+<%= link_to 'Back', plushkis_path %>

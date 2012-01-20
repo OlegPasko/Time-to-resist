@@ -2,7 +2,7 @@ class TendersController < ApplicationController
   # GET /tenders
   # GET /tenders.json
   def index
-    @tenders = Tender.all
+    @tenders = Tender.all.sort_by{ rand }
 
     respond_to do |format|
       format.html # index.html.erb

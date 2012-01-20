@@ -1,5 +1,7 @@
 <h1>Фонд «Перекач»</h1>
 <%if current_user%>
+В наличии <strong>$ <%= Fund.sum(:taction) %></strong>, в т.ч. собрано: <strong>$ <%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> и роздано: <strong>$ <%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong>. Кроме того имеется <strong><%= Fund.sum(:gold) %> золота</strong>.<br />
+<h5>Фонд помог в прокачке <strong><%= Fund.where(:comment => "перекач").count %></strong> человекам</h5>
 <% if Info.where(:location => 3).first %>
 <div class="alert-message block-message success">
 	<a class="close" href="#">&times;</a>
@@ -10,8 +12,36 @@
 <%= link_to 'New Fund', new_fund_path %>
 <% end %>
 
-В наличии $ <strong><%= Fund.sum(:taction) %></strong>, в т.ч. собрано: <strong>$ <%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> и роздано: <strong>$ <%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong>. Кроме того имеется <strong><%= Fund.sum(:gold) %> золота</strong>.
-
+<ul class="tabs">
+  <li class="active"><a href="#group">Сгруппировано</a></li>
+  <li><a href="#all">Подробно</a></li>
+</ul>
+<div class="pill-content">
+	<div class="active" id="group">
+  	
+		<table class="condensed-table">
+		  <tr>
+		  	<th>Кто</th>
+		  	<th>Баланс</th>
+		    <th>Внесено монет</th>
+		    <th>Получено монет</th>
+		  </tr>
+		
+		<% @users.each do |u| %>
+			<%if u.funds.count > 0%>
+			  <tr>
+			    <td><%= link_to u.email, u %></td>
+			    <td><% if u.funds.sum(:taction) < 0 %><div style="color: red;"><%= u.funds.sum(:taction) %></div><%elsif u.funds.sum(:taction) > 0 %><div style="color: green;"><%= u.funds.sum(:taction) %></div><%end%> <% if u.funds.sum(:gold) != 0 %><div style="color: orange;"><%= u.funds.sum(:gold).to_s+" G." %></div><%end%></td>
+			    <td><%= u.funds.where(:taction => 0..99999999).sum(:taction) %></td>
+			    <td><%= u.funds.where(:taction => -9999999999..0).sum(:taction).abs %></td>
+			  </tr>
+			<% end %>
+		<% end %>
+		</table>
+  	
+	</div>
+  <div id="all">
+  	
 <table class="condensed-table">
   <tr>
   	<th>Кто</th>
@@ -44,7 +74,7 @@
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 <% if admin_user %>
 <%= link_to 'New Fund', new_fund_path %>

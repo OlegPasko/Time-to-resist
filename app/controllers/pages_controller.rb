@@ -2,7 +2,7 @@
 class PagesController < ApplicationController
   def home
     @users = User.all
-    @lastusers = User.find(:all, :order => "created_at DESC", :limit => 14)
+    @lastusers = User.where(:created_at => Date.yesterday..Date.today)
     @lastrewards = Reward.find(:all, :order => "created_at DESC", :limit => 7)
     @walls = Wall.limit(15)
     

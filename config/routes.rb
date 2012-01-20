@@ -1,5 +1,7 @@
 Muschool::Application.routes.draw do
 
+  resources :plushkis
+
   resources :infos
 
   resources :tenders

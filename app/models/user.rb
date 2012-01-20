@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  default_scope :order => 'email ASC'
+  
   has_secure_password
   validates_presence_of :password, :on => :create, :message => "Can't be blank"
   validates_presence_of :email 
@@ -29,6 +31,7 @@ class User < ActiveRecord::Base
   
   has_many :rewards, :dependent => :destroy 
   has_many :funds, :dependent => :destroy 
+  has_many :plushkis, :dependent => :destroy 
   has_many :walls, :dependent => :destroy 
   has_many :tenders, :dependent => :destroy 
 end

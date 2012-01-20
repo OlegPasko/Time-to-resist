@@ -3,7 +3,7 @@ class FundsController < ApplicationController
   # GET /funds.json
   def index
     @funds = Fund.all
-
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @funds }

@@ -7,7 +7,7 @@
 <div class="row">
 <div class="span-one-third">
 
-<h3>Последние 14 из <%=@users.count%> человек</h3>
+<h3>Нас <%=@users.count%> чел.<%if @lastusers.count > 0%>, ряды пополнили:<%end%></h3>
 		<%@lastusers.each do |u|%>
 			<%=image_tag u.character.image, :title => u.character.name %> <%= link_to u.email, u%> (<%=u.level%>) из г. <%= link_to u.city.name, u.city%><br />
 		<%end%>
@@ -24,8 +24,9 @@
 	
 		
 		
-	<div style="text-align: center;"><h3>Наши фонды</h3><h2>«Перекач»: $ <%=link_to Fund.sum(:taction), funds_path%></h2></div>
+	<div style="text-align: center;"><h3>Наши фонды</h3><h2><%=link_to "«Перекач»: $ "+Fund.sum(:taction).to_s, funds_path%></h2></div>
 	<div style="text-align: center;">собрано: <strong>$ <%=Fund.where(:taction => 0..99999999).sum(:taction)%></strong> | роздано:<strong>$ <%=Fund.where(:taction => -9999999999..0).sum(:taction).abs%></strong></div>
+	<div style="text-align: center;"><h2><%=link_to "«Плюшкин»: $ "+Plushki.sum(:sum).to_s, plushkis_path%></h2></div>
 <br />
 	<div style="text-align: center;"><h2><%=link_to "Конкурс на логотип", tenders_path%></h2>
 	<%= link_to 'Добавить свою работу!', new_tender_path, :class => "btn success" if current_user %></div>

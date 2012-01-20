@@ -1,0 +1,47 @@
+<h1>Фонд «Плюшкин»</h1>
+<% if current_user %>
+
+<% if Info.where(:location => 4).first %>
+	<div class="alert-message block-message success">
+		<a class="close" href="#">&times;</a>
+	<%= raw(Info.where(:location => 4).first.text) %>
+	</div>
+<%end%>
+
+<% if current_user && admin_user %>
+<%= link_to 'New Plushki', new_plushki_path %>
+<% end %>
+
+<table class="condensed-table">
+  <tr>
+    <th>Кто</th>
+    <th>Когда</th>
+    <th>Сколько</th>
+    <th>И че?</th>
+    <% if current_user && admin_user %>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @plushkis.each do |plushki| %>
+  <tr>
+    <td><%= link_to plushki.user.email, plushki.user %></td>
+    <td><%= plushki.created_at.strftime('%d.%m.%Y ') %></td>
+    <td><%= plushki.sum %></td>
+    <td><%= raw(plushki.comment) %></td>
+    <% if current_user && admin_user %>
+    <td><%= link_to 'Edit', edit_plushki_path(plushki) %></td>
+    <td><%= link_to 'Destroy', plushki, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plushki', new_plushki_path %>
+
+<%else%>
+<%= render "layouts/auth"%>
+<%end%>
